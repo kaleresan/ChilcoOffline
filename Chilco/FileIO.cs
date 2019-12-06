@@ -6,9 +6,8 @@ namespace Chilco
     internal static class FileIO
     {
        
-        private static readonly string groupPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "settings.json");
-        private static readonly string authTokenPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "token.txt");
-
+        private static readonly string groupPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), @"settings.json");
+        
         public static Group[] LoadGroups()
         {
             if (File.Exists(groupPath))
@@ -25,21 +24,6 @@ namespace Chilco
             File.Create(groupPath).Close();
             string json = Newtonsoft.Json.JsonConvert.SerializeObject(groups);
             File.WriteAllText(groupPath, json);
-        }
-
-        public static string LoadAuthToken() 
-        {
-            Console.WriteLine("Loading auth token");
-            if (File.Exists(authTokenPath))
-                return File.ReadAllText(authTokenPath);
-            else
-                return "";
-        }
-
-        public static void SaveAuthToken(string authToken)
-        {
-            File.Create(authTokenPath).Close();
-            File.WriteAllText(authTokenPath, authToken);
         }
     }
 }

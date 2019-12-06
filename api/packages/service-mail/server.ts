@@ -1,2 +1,0 @@
-import { MailService } from '.';
-MailService();

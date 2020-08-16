@@ -18,15 +18,15 @@ namespace Chilco
         {
             //For every Process currently running that has the name s
             foreach (Process p in Process.GetProcesses().Where(
-                p2 => p2.ProcessName == processName || 
-                (p2.MainWindowTitle == processName && 
+                p2 => string.Equals(p2.ProcessName, processName, System.StringComparison.OrdinalIgnoreCase) || 
+                (string.Equals(p2.MainWindowTitle, processName, System.StringComparison.OrdinalIgnoreCase) && 
                 p2.MainWindowTitle != "" && 
                 processName != "")))
             {
                 //Checks if process is actually running
                 //(sometimes the Process closes itself before being killed and Chilco crashes)
-                if (Process.GetProcesses().Count(p3 => p3.ProcessName == processName ||
-                    (p3.MainWindowTitle == processName && 
+                if (Process.GetProcesses().Count(p3 => string.Equals(p3.ProcessName, processName, System.StringComparison.OrdinalIgnoreCase) ||
+                    (string.Equals(p3.MainWindowTitle, processName, System.StringComparison.OrdinalIgnoreCase) && 
                     p3.MainWindowTitle != "" && 
                     processName != "")) > 0)
                 {

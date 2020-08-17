@@ -56,6 +56,10 @@ namespace Chilco
                 }
                 group.DateLastRun = DateTime.Now;
             }
+            if (group.LeftoverTime.Ticks > group.ruleset.MaxPlaytime.Ticks && group.ruleset.MaxPlaytime.Ticks != 0)
+            {
+                group.LeftoverTime = group.ruleset.MaxPlaytime;
+            }
         }
 
         private void UpdateLeftoverTime()

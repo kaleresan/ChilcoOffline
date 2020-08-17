@@ -35,17 +35,37 @@ namespace ChilcoSettingsEditor
 
         public void UpdateGroupInformation()
         {
-            Console.WriteLine("Updating Group Information");
-            textBoxTitle.Text = CurrentGroup.ruleset.Title;
-            textBoxDailyPlaytime.Text = CurrentGroup.ruleset.DailyPlaytime.ToString(@"%d\dhh\hmm\mss\s");
-            textBoxLeftoverTime.Text = CurrentGroup.LeftoverTime.ToString(@"%d\dhh\hmm\mss\s");
-            textBoxMaxPlaytime.Text = CurrentGroup.ruleset.MaxPlaytime.ToString(@"%d\dhh\hmm\mss\s");
-            checkBoxTimeRollover.Checked = CurrentGroup.ruleset.DoTimeRollover;
-
-            listBoxProcesses.Items.Clear();
-            foreach (string process in CurrentGroup.ruleset.Processes)
+            bool isSelected = CurrentGroup.ruleset.Key != "";
+            textBoxTitle.Enabled = isSelected;
+            textBoxDailyPlaytime.Enabled = isSelected;
+            textBoxLeftoverTime.Enabled = isSelected;
+            textBoxMaxPlaytime.Enabled = isSelected;
+            checkBoxTimeRollover.Enabled = isSelected;
+            buttonRemoveProcess.Enabled = isSelected;
+            buttonAddProcess.Enabled = isSelected;
+            if (!isSelected)
             {
-                listBoxProcesses.Items.Add(process);
+                textBoxTitle.Text = "";
+                textBoxDailyPlaytime.Text = "";
+                textBoxLeftoverTime.Text = "";
+                textBoxMaxPlaytime.Text = "";
+                checkBoxTimeRollover.Checked = true;
+                listBoxProcesses.Items.Clear();
+            }
+            else
+            {
+                Console.WriteLine("Updating Group Information");
+                textBoxTitle.Text = CurrentGroup.ruleset.Title;
+                textBoxDailyPlaytime.Text = CurrentGroup.ruleset.DailyPlaytime.ToString(@"%d\dhh\hmm\mss\s");
+                textBoxLeftoverTime.Text = CurrentGroup.LeftoverTime.ToString(@"%d\dhh\hmm\mss\s");
+                textBoxMaxPlaytime.Text = CurrentGroup.ruleset.MaxPlaytime.ToString(@"%d\dhh\hmm\mss\s");
+                checkBoxTimeRollover.Checked = CurrentGroup.ruleset.DoTimeRollover;
+
+                listBoxProcesses.Items.Clear();
+                foreach (string process in CurrentGroup.ruleset.Processes)
+                {
+                    listBoxProcesses.Items.Add(process);
+                }
             }
         }
 
@@ -157,12 +177,11 @@ namespace ChilcoSettingsEditor
             if (listBoxRules.SelectedIndex == -1) return;
             Groups.Remove(CurrentGroup);
             CurrentGroup = new Group(
-                null,
-                null,
+                "",
+                "",
                 new List<string>(),
                 new TimeSpan(0),
-                true,
-                DateTime.Now,
+                true, DateTime.Now,
                 new TimeSpan(0),
                 new TimeSpan(0));
             UpdateGrouplist(-1);

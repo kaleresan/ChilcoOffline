@@ -45,7 +45,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.listBoxRunningProcesses = new System.Windows.Forms.ListBox();
             this.buttonRemoveProcess = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonAddProcess = new System.Windows.Forms.Button();
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonDeleteGroup = new System.Windows.Forms.Button();
@@ -217,17 +217,17 @@
             this.buttonRemoveProcess.UseVisualStyleBackColor = true;
             this.buttonRemoveProcess.Click += new System.EventHandler(this.buttonRemoveProcess_Click);
             // 
-            // button2
+            // buttonAddProcess
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.buttonAddProcess.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(510, 396);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(236, 26);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "Prozess hinzufügen";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonAddProcess.Location = new System.Drawing.Point(510, 396);
+            this.buttonAddProcess.Name = "buttonAddProcess";
+            this.buttonAddProcess.Size = new System.Drawing.Size(236, 26);
+            this.buttonAddProcess.TabIndex = 18;
+            this.buttonAddProcess.Text = "Prozess hinzufügen";
+            this.buttonAddProcess.UseVisualStyleBackColor = true;
+            this.buttonAddProcess.Click += new System.EventHandler(this.button2_Click);
             // 
             // buttonUpdate
             // 
@@ -294,7 +294,7 @@
             this.Controls.Add(this.buttonDeleteGroup);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonUpdate);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buttonAddProcess);
             this.Controls.Add(this.buttonRemoveProcess);
             this.Controls.Add(this.listBoxRunningProcesses);
             this.Controls.Add(this.label3);
@@ -338,7 +338,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListBox listBoxRunningProcesses;
         private System.Windows.Forms.Button buttonRemoveProcess;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonAddProcess;
         private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonDeleteGroup;

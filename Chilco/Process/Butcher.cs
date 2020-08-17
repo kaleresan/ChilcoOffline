@@ -16,21 +16,15 @@ namespace Chilco
 
         private static void KillProcess(string processName)
         {
-            //For every Process currently running that has the name s
-            foreach (Process p in Process.GetProcesses().Where(
-                p2 => string.Equals(p2.ProcessName, processName, System.StringComparison.OrdinalIgnoreCase) || 
-                (string.Equals(p2.MainWindowTitle, processName, System.StringComparison.OrdinalIgnoreCase) && 
-                p2.MainWindowTitle != "" && 
-                processName != "")))
+            if (Process.GetProcesses().Count(p => string.Equals(p.ProcessName, processName, System.StringComparison.OrdinalIgnoreCase)) > 0)
             {
-                //Checks if process is actually running
-                //(sometimes the Process closes itself before being killed and Chilco crashes)
-                if (Process.GetProcesses().Count(p3 => string.Equals(p3.ProcessName, processName, System.StringComparison.OrdinalIgnoreCase) ||
-                    (string.Equals(p3.MainWindowTitle, processName, System.StringComparison.OrdinalIgnoreCase) && 
-                    p3.MainWindowTitle != "" && 
-                    processName != "")) > 0)
+                try
                 {
-                    p.Kill();
+                    Process.GetProcesses().First(p => string.Equals(p.ProcessName, processName, System.StringComparison.OrdinalIgnoreCase)).Kill();
+                }catch(System.Exception e)
+                {
+                    System.Console.WriteLine("ERROR while killing process \"" + processName + "\""
+                                            +"Message: \"" + e.Message + "\"");
                 }
             }
         }

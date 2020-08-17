@@ -39,9 +39,11 @@ namespace Chilco
         }
         public static void SaveGroups(Group[] groups)
         {
-            File.Create(groupPath).Close();
             string json = Newtonsoft.Json.JsonConvert.SerializeObject(groups);
+            File.Create(groupPath).Close();
             File.WriteAllText(groupPath, json);
+            File.Create(defaultGroupPath).Close();
+            File.WriteAllText(defaultGroupPath, json);
         }
     }
 }

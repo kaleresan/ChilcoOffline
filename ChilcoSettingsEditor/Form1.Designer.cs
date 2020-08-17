@@ -99,6 +99,7 @@
             this.textBoxTitle.Name = "textBoxTitle";
             this.textBoxTitle.Size = new System.Drawing.Size(111, 22);
             this.textBoxTitle.TabIndex = 4;
+            this.textBoxTitle.TextChanged += new System.EventHandler(this.textBoxTitle_TextChanged);
             // 
             // textBoxLeftoverTime
             // 
@@ -106,6 +107,7 @@
             this.textBoxLeftoverTime.Name = "textBoxLeftoverTime";
             this.textBoxLeftoverTime.Size = new System.Drawing.Size(111, 22);
             this.textBoxLeftoverTime.TabIndex = 5;
+            this.textBoxLeftoverTime.TextChanged += new System.EventHandler(this.textBoxLeftoverTime_TextChanged);
             // 
             // textBoxDailyPlaytime
             // 
@@ -113,6 +115,7 @@
             this.textBoxDailyPlaytime.Name = "textBoxDailyPlaytime";
             this.textBoxDailyPlaytime.Size = new System.Drawing.Size(111, 22);
             this.textBoxDailyPlaytime.TabIndex = 7;
+            this.textBoxDailyPlaytime.TextChanged += new System.EventHandler(this.textBoxDailyPlaytime_TextChanged);
             // 
             // labelDailyPlaytime
             // 
@@ -148,6 +151,7 @@
             this.textBoxMaxPlaytime.Name = "textBoxMaxPlaytime";
             this.textBoxMaxPlaytime.Size = new System.Drawing.Size(111, 22);
             this.textBoxMaxPlaytime.TabIndex = 12;
+            this.textBoxMaxPlaytime.TextChanged += new System.EventHandler(this.textBoxMaxPlaytime_TextChanged);
             // 
             // labelMaxPlaytime
             // 
@@ -211,6 +215,7 @@
             this.buttonRemoveProcess.TabIndex = 17;
             this.buttonRemoveProcess.Text = "Prozess entfernen";
             this.buttonRemoveProcess.UseVisualStyleBackColor = true;
+            this.buttonRemoveProcess.Click += new System.EventHandler(this.buttonRemoveProcess_Click);
             // 
             // button2
             // 
@@ -222,6 +227,7 @@
             this.button2.TabIndex = 18;
             this.button2.Text = "Prozess hinzufügen";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // buttonUpdate
             // 
@@ -244,6 +250,7 @@
             this.buttonSave.TabIndex = 20;
             this.buttonSave.Text = "Speichern";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // buttonDeleteGroup
             // 
@@ -254,6 +261,7 @@
             this.buttonDeleteGroup.TabIndex = 21;
             this.buttonDeleteGroup.Text = "Regel entfernen";
             this.buttonDeleteGroup.UseVisualStyleBackColor = true;
+            this.buttonDeleteGroup.Click += new System.EventHandler(this.buttonDeleteGroup_Click);
             // 
             // buttonAddGroup
             // 
@@ -264,6 +272,7 @@
             this.buttonAddGroup.TabIndex = 22;
             this.buttonAddGroup.Text = "Regel hinzufügen";
             this.buttonAddGroup.UseVisualStyleBackColor = true;
+            this.buttonAddGroup.Click += new System.EventHandler(this.buttonAddGroup_Click);
             // 
             // labelGroup
             // 

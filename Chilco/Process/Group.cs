@@ -12,11 +12,11 @@ namespace Chilco
         public static List<Group> GetGroups { get; private set; } = new List<Group>();
 
         [JsonConstructor]
-        public Group(string Key, string Title, List<String> Processes, TimeSpan LeftoverTime, bool DoTimeRollover, DateTime DateLastRun, TimeSpan DailyPlaytime)
+        public Group(string Key, string Title, List<String> Processes, TimeSpan LeftoverTime, bool DoTimeRollover, DateTime DateLastRun, TimeSpan DailyPlaytime, TimeSpan MaxPlaytime)
         {
             this.LeftoverTime = LeftoverTime;
             this.DateLastRun = DateLastRun;
-            this.ruleset = new Ruleset(Key, Title, Processes, DoTimeRollover, DailyPlaytime);
+            this.ruleset = new Ruleset(Key, Title, Processes, DoTimeRollover, DailyPlaytime, MaxPlaytime);
         }
 
         public Group(TimeSpan leftoverTime, DateTime dateLastRun, Ruleset ruleset)
@@ -33,15 +33,16 @@ namespace Chilco
             public List<string> Processes;
             public bool DoTimeRollover;
             public TimeSpan DailyPlaytime;
-
+            public TimeSpan MaxPlaytime;
             [JsonConstructor]
-            public Ruleset(string Key, string Title, List<string> Processes, bool DoTimeRollover, TimeSpan DailyPlaytime)
+            public Ruleset(string Key, string Title, List<string> Processes, bool DoTimeRollover, TimeSpan DailyPlaytime, TimeSpan MaxPlaytime)
             {
                 this.Key = Key;
                 this.Title = Title;
                 this.Processes = Processes;
                 this.DoTimeRollover = DoTimeRollover;
                 this.DailyPlaytime = DailyPlaytime;
+                this.MaxPlaytime = MaxPlaytime;
             }
         }
     }

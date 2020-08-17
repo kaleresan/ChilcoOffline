@@ -43,7 +43,8 @@ namespace Chilco
                                         "Chrome"
                                     },
                         DoTimeRollover = true,
-                        DailyPlaytime = new TimeSpan(0, 0, 30, 0, 0)
+                        DailyPlaytime = new TimeSpan(0, 0, 30, 0, 0),
+                        MaxPlaytime = new TimeSpan(0, 0, 0, 0, 0)
                     } ,
 
                     new Ruleset() {
@@ -54,7 +55,8 @@ namespace Chilco
                                         "Spotify"
                                     },
                         DoTimeRollover = true,
-                        DailyPlaytime = new TimeSpan(0, 2, 0, 0, 0)
+                        DailyPlaytime = new TimeSpan(0, 2, 0, 0, 0),
+                        MaxPlaytime = new TimeSpan(0, 0, 0, 0, 0)
                     } ,
 
                     new Ruleset() {
@@ -66,8 +68,9 @@ namespace Chilco
                                         "PowerShell",
                                         "Taskmgr"
                                     },
-                        DoTimeRollover = true,
-                        DailyPlaytime = new TimeSpan(0, 0, 0, 0, 0)
+                        DoTimeRollover = false,
+                        DailyPlaytime = new TimeSpan(0, 0, 0, 0, 0),
+                        MaxPlaytime = new TimeSpan(0, 0, 0, 0, 0)
                     } 
                 };
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.listBoxRules = new System.Windows.Forms.ListBox();
             this.labelRules = new System.Windows.Forms.Label();
             this.labelTitle = new System.Windows.Forms.Label();
@@ -312,8 +313,9 @@
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.labelRules);
             this.Controls.Add(this.listBoxRules);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Chilco";
             this.ResumeLayout(false);
             this.PerformLayout();
 

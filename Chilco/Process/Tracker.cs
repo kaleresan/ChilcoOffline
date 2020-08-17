@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 
 namespace Chilco
@@ -60,7 +60,7 @@ namespace Chilco
 
         private void UpdateLeftoverTime()
         {
-            TimeRollover();
+            if(group.ruleset.DoTimeRollover) TimeRollover();
 
             if (RunningTime.IsRunning)
             {

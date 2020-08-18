@@ -5,28 +5,22 @@ namespace Chilco
 {
     internal static class Butcher
     {
-        public static void KillProcesses(Group group)
+        public static bool KillProcess(string processName)
         {
-            //For every Process in the Processgroup
-            foreach (string s in group.ruleset.Processes)
-            {
-                KillProcess(s);
-            }
-        }
-
-        private static void KillProcess(string processName)
-        {
-            if (Process.GetProcesses().Count(p => string.Equals(p.ProcessName, processName, System.StringComparison.OrdinalIgnoreCase)) > 0)
+            bool success = false;
+            while (Process.GetProcesses().Count(p => string.Equals(p.ProcessName, processName, System.StringComparison.OrdinalIgnoreCase) && !p.HasExited) > 0)
             {
                 try
                 {
                     Process.GetProcesses().First(p => string.Equals(p.ProcessName, processName, System.StringComparison.OrdinalIgnoreCase)).Kill();
+                    success = true;
                 }catch(System.Exception e)
                 {
                     System.Console.WriteLine("ERROR while killing process \"" + processName + "\""
                                             +"Message: \"" + e.Message + "\"");
                 }
             }
+            return success;
         }
     }
 }

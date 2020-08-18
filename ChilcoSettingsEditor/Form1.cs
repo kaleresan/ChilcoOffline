@@ -1,10 +1,11 @@
-﻿using Chilco;
+using Chilco;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -195,8 +196,11 @@ namespace ChilcoSettingsEditor
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            Butcher.KillProcess("chilco");
+            bool chilco_was_running = Butcher.KillProcess("chilco");
             FileIO.SaveGroups(Groups.ToArray());
+            if (chilco_was_running)
+            {
+                Process.Start(Directory.GetCurrentDirectory() + "\\chilco.exe");
+            }
         }
-    }
 }

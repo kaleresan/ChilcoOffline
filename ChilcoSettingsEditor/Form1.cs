@@ -1,4 +1,4 @@
-using Chilco;
+﻿using Chilco;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -203,4 +203,40 @@ namespace ChilcoSettingsEditor
                 Process.Start(Directory.GetCurrentDirectory() + "\\chilco.exe");
             }
         }
+
+        private void checkBoxModay_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxTuesday_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxWednesday_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxThursday_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxFriday_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxSaturday_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxSunday_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

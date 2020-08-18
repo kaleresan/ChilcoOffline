@@ -52,6 +52,15 @@
             this.buttonDeleteGroup = new System.Windows.Forms.Button();
             this.buttonAddGroup = new System.Windows.Forms.Button();
             this.labelGroup = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.checkBoxModay = new System.Windows.Forms.CheckBox();
+            this.checkBoxTuesday = new System.Windows.Forms.CheckBox();
+            this.checkBoxWednesday = new System.Windows.Forms.CheckBox();
+            this.checkBoxThursday = new System.Windows.Forms.CheckBox();
+            this.checkBoxFriday = new System.Windows.Forms.CheckBox();
+            this.checkBoxSaturday = new System.Windows.Forms.CheckBox();
+            this.checkBoxSunday = new System.Windows.Forms.CheckBox();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // listBoxRules
@@ -98,7 +107,7 @@
             // 
             this.textBoxTitle.Location = new System.Drawing.Point(367, 50);
             this.textBoxTitle.Name = "textBoxTitle";
-            this.textBoxTitle.Size = new System.Drawing.Size(111, 22);
+            this.textBoxTitle.Size = new System.Drawing.Size(226, 22);
             this.textBoxTitle.TabIndex = 4;
             this.textBoxTitle.TextChanged += new System.EventHandler(this.textBoxTitle_TextChanged);
             // 
@@ -106,7 +115,7 @@
             // 
             this.textBoxLeftoverTime.Location = new System.Drawing.Point(367, 79);
             this.textBoxLeftoverTime.Name = "textBoxLeftoverTime";
-            this.textBoxLeftoverTime.Size = new System.Drawing.Size(111, 22);
+            this.textBoxLeftoverTime.Size = new System.Drawing.Size(226, 22);
             this.textBoxLeftoverTime.TabIndex = 5;
             this.textBoxLeftoverTime.TextChanged += new System.EventHandler(this.textBoxLeftoverTime_TextChanged);
             // 
@@ -114,7 +123,7 @@
             // 
             this.textBoxDailyPlaytime.Location = new System.Drawing.Point(367, 107);
             this.textBoxDailyPlaytime.Name = "textBoxDailyPlaytime";
-            this.textBoxDailyPlaytime.Size = new System.Drawing.Size(111, 22);
+            this.textBoxDailyPlaytime.Size = new System.Drawing.Size(226, 22);
             this.textBoxDailyPlaytime.TabIndex = 7;
             this.textBoxDailyPlaytime.TextChanged += new System.EventHandler(this.textBoxDailyPlaytime_TextChanged);
             // 
@@ -140,7 +149,7 @@
             // 
             this.checkBoxTimeRollover.Location = new System.Drawing.Point(367, 138);
             this.checkBoxTimeRollover.Name = "checkBoxTimeRollover";
-            this.checkBoxTimeRollover.Size = new System.Drawing.Size(111, 22);
+            this.checkBoxTimeRollover.Size = new System.Drawing.Size(226, 22);
             this.checkBoxTimeRollover.TabIndex = 10;
             this.checkBoxTimeRollover.Text = "Nein";
             this.checkBoxTimeRollover.UseVisualStyleBackColor = true;
@@ -150,7 +159,7 @@
             // 
             this.textBoxMaxPlaytime.Location = new System.Drawing.Point(367, 166);
             this.textBoxMaxPlaytime.Name = "textBoxMaxPlaytime";
-            this.textBoxMaxPlaytime.Size = new System.Drawing.Size(111, 22);
+            this.textBoxMaxPlaytime.Size = new System.Drawing.Size(226, 22);
             this.textBoxMaxPlaytime.TabIndex = 12;
             this.textBoxMaxPlaytime.TextChanged += new System.EventHandler(this.textBoxMaxPlaytime_TextChanged);
             // 
@@ -169,9 +178,9 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.listBoxProcesses.FormattingEnabled = true;
             this.listBoxProcesses.ItemHeight = 16;
-            this.listBoxProcesses.Location = new System.Drawing.Point(240, 226);
+            this.listBoxProcesses.Location = new System.Drawing.Point(240, 242);
             this.listBoxProcesses.Name = "listBoxProcesses";
-            this.listBoxProcesses.Size = new System.Drawing.Size(238, 164);
+            this.listBoxProcesses.Size = new System.Drawing.Size(353, 148);
             this.listBoxProcesses.TabIndex = 13;
             // 
             // label2
@@ -179,9 +188,9 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(485, 15);
+            this.label2.Location = new System.Drawing.Point(592, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(285, 30);
+            this.label2.Size = new System.Drawing.Size(290, 30);
             this.label2.TabIndex = 14;
             this.label2.Text = "laufende Prozesse";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -189,7 +198,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(237, 206);
+            this.label3.Location = new System.Drawing.Point(237, 222);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 17);
             this.label3.TabIndex = 15;
@@ -202,9 +211,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listBoxRunningProcesses.FormattingEnabled = true;
             this.listBoxRunningProcesses.ItemHeight = 16;
-            this.listBoxRunningProcesses.Location = new System.Drawing.Point(510, 50);
+            this.listBoxRunningProcesses.Location = new System.Drawing.Point(617, 50);
             this.listBoxRunningProcesses.Name = "listBoxRunningProcesses";
-            this.listBoxRunningProcesses.Size = new System.Drawing.Size(236, 308);
+            this.listBoxRunningProcesses.Size = new System.Drawing.Size(241, 308);
             this.listBoxRunningProcesses.TabIndex = 16;
             // 
             // buttonRemoveProcess
@@ -212,7 +221,7 @@
             this.buttonRemoveProcess.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonRemoveProcess.Location = new System.Drawing.Point(240, 396);
             this.buttonRemoveProcess.Name = "buttonRemoveProcess";
-            this.buttonRemoveProcess.Size = new System.Drawing.Size(238, 26);
+            this.buttonRemoveProcess.Size = new System.Drawing.Size(353, 26);
             this.buttonRemoveProcess.TabIndex = 17;
             this.buttonRemoveProcess.Text = "Prozess entfernen";
             this.buttonRemoveProcess.UseVisualStyleBackColor = true;
@@ -222,9 +231,9 @@
             // 
             this.buttonAddProcess.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAddProcess.Location = new System.Drawing.Point(510, 396);
+            this.buttonAddProcess.Location = new System.Drawing.Point(617, 396);
             this.buttonAddProcess.Name = "buttonAddProcess";
-            this.buttonAddProcess.Size = new System.Drawing.Size(236, 26);
+            this.buttonAddProcess.Size = new System.Drawing.Size(241, 26);
             this.buttonAddProcess.TabIndex = 18;
             this.buttonAddProcess.Text = "Prozess hinzufügen";
             this.buttonAddProcess.UseVisualStyleBackColor = true;
@@ -234,9 +243,9 @@
             // 
             this.buttonUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonUpdate.Location = new System.Drawing.Point(510, 364);
+            this.buttonUpdate.Location = new System.Drawing.Point(617, 364);
             this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(236, 26);
+            this.buttonUpdate.Size = new System.Drawing.Size(241, 26);
             this.buttonUpdate.TabIndex = 19;
             this.buttonUpdate.Text = "Update";
             this.buttonUpdate.UseVisualStyleBackColor = true;
@@ -280,16 +289,160 @@
             this.labelGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelGroup.Location = new System.Drawing.Point(258, 15);
             this.labelGroup.Name = "labelGroup";
-            this.labelGroup.Size = new System.Drawing.Size(200, 30);
+            this.labelGroup.Size = new System.Drawing.Size(315, 30);
             this.labelGroup.TabIndex = 23;
             this.labelGroup.Text = "Regel";
             this.labelGroup.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 7;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxSunday, 6, 0);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxSaturday, 5, 0);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxFriday, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxThursday, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxWednesday, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxTuesday, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxModay, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(240, 194);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(353, 25);
+            this.tableLayoutPanel1.TabIndex = 24;
+            // 
+            // checkBoxModay
+            // 
+            this.checkBoxModay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBoxModay.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkBoxModay.AutoSize = true;
+            this.checkBoxModay.Location = new System.Drawing.Point(0, 0);
+            this.checkBoxModay.Margin = new System.Windows.Forms.Padding(0);
+            this.checkBoxModay.Name = "checkBoxModay";
+            this.checkBoxModay.Size = new System.Drawing.Size(50, 25);
+            this.checkBoxModay.TabIndex = 0;
+            this.checkBoxModay.Text = "Mo";
+            this.checkBoxModay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBoxModay.UseVisualStyleBackColor = true;
+            this.checkBoxModay.CheckedChanged += new System.EventHandler(this.checkBoxModay_CheckedChanged);
+            // 
+            // checkBoxTuesday
+            // 
+            this.checkBoxTuesday.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBoxTuesday.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkBoxTuesday.AutoSize = true;
+            this.checkBoxTuesday.Location = new System.Drawing.Point(50, 0);
+            this.checkBoxTuesday.Margin = new System.Windows.Forms.Padding(0);
+            this.checkBoxTuesday.Name = "checkBoxTuesday";
+            this.checkBoxTuesday.Size = new System.Drawing.Size(50, 25);
+            this.checkBoxTuesday.TabIndex = 1;
+            this.checkBoxTuesday.Text = "Di";
+            this.checkBoxTuesday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBoxTuesday.UseVisualStyleBackColor = true;
+            this.checkBoxTuesday.CheckedChanged += new System.EventHandler(this.checkBoxTuesday_CheckedChanged);
+            // 
+            // checkBoxWednesday
+            // 
+            this.checkBoxWednesday.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBoxWednesday.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkBoxWednesday.AutoSize = true;
+            this.checkBoxWednesday.Location = new System.Drawing.Point(100, 0);
+            this.checkBoxWednesday.Margin = new System.Windows.Forms.Padding(0);
+            this.checkBoxWednesday.Name = "checkBoxWednesday";
+            this.checkBoxWednesday.Size = new System.Drawing.Size(50, 25);
+            this.checkBoxWednesday.TabIndex = 2;
+            this.checkBoxWednesday.Text = "Mi";
+            this.checkBoxWednesday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBoxWednesday.UseVisualStyleBackColor = true;
+            this.checkBoxWednesday.CheckedChanged += new System.EventHandler(this.checkBoxWednesday_CheckedChanged);
+            // 
+            // checkBoxThursday
+            // 
+            this.checkBoxThursday.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBoxThursday.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkBoxThursday.AutoSize = true;
+            this.checkBoxThursday.Location = new System.Drawing.Point(150, 0);
+            this.checkBoxThursday.Margin = new System.Windows.Forms.Padding(0);
+            this.checkBoxThursday.Name = "checkBoxThursday";
+            this.checkBoxThursday.Size = new System.Drawing.Size(50, 25);
+            this.checkBoxThursday.TabIndex = 3;
+            this.checkBoxThursday.Text = "Do";
+            this.checkBoxThursday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBoxThursday.UseVisualStyleBackColor = true;
+            this.checkBoxThursday.CheckedChanged += new System.EventHandler(this.checkBoxThursday_CheckedChanged);
+            // 
+            // checkBoxFriday
+            // 
+            this.checkBoxFriday.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBoxFriday.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkBoxFriday.AutoSize = true;
+            this.checkBoxFriday.Location = new System.Drawing.Point(200, 0);
+            this.checkBoxFriday.Margin = new System.Windows.Forms.Padding(0);
+            this.checkBoxFriday.Name = "checkBoxFriday";
+            this.checkBoxFriday.Size = new System.Drawing.Size(50, 25);
+            this.checkBoxFriday.TabIndex = 4;
+            this.checkBoxFriday.Text = "Fr";
+            this.checkBoxFriday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBoxFriday.UseVisualStyleBackColor = true;
+            this.checkBoxFriday.CheckedChanged += new System.EventHandler(this.checkBoxFriday_CheckedChanged);
+            // 
+            // checkBoxSaturday
+            // 
+            this.checkBoxSaturday.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBoxSaturday.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkBoxSaturday.AutoSize = true;
+            this.checkBoxSaturday.Location = new System.Drawing.Point(250, 0);
+            this.checkBoxSaturday.Margin = new System.Windows.Forms.Padding(0);
+            this.checkBoxSaturday.Name = "checkBoxSaturday";
+            this.checkBoxSaturday.Size = new System.Drawing.Size(50, 25);
+            this.checkBoxSaturday.TabIndex = 5;
+            this.checkBoxSaturday.Text = "Sa";
+            this.checkBoxSaturday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBoxSaturday.UseVisualStyleBackColor = true;
+            this.checkBoxSaturday.CheckedChanged += new System.EventHandler(this.checkBoxSaturday_CheckedChanged);
+            // 
+            // checkBoxSunday
+            // 
+            this.checkBoxSunday.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBoxSunday.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkBoxSunday.AutoSize = true;
+            this.checkBoxSunday.Location = new System.Drawing.Point(300, 0);
+            this.checkBoxSunday.Margin = new System.Windows.Forms.Padding(0);
+            this.checkBoxSunday.Name = "checkBoxSunday";
+            this.checkBoxSunday.Size = new System.Drawing.Size(53, 25);
+            this.checkBoxSunday.TabIndex = 6;
+            this.checkBoxSunday.Text = "So";
+            this.checkBoxSunday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBoxSunday.UseVisualStyleBackColor = true;
+            this.checkBoxSunday.CheckedChanged += new System.EventHandler(this.checkBoxSunday_CheckedChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 461);
+            this.ClientSize = new System.Drawing.Size(894, 461);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.labelGroup);
             this.Controls.Add(this.buttonAddGroup);
             this.Controls.Add(this.buttonDeleteGroup);
@@ -316,6 +469,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Chilco";
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -346,6 +501,14 @@
         private System.Windows.Forms.Button buttonDeleteGroup;
         private System.Windows.Forms.Button buttonAddGroup;
         private System.Windows.Forms.Label labelGroup;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.CheckBox checkBoxModay;
+        private System.Windows.Forms.CheckBox checkBoxSunday;
+        private System.Windows.Forms.CheckBox checkBoxSaturday;
+        private System.Windows.Forms.CheckBox checkBoxFriday;
+        private System.Windows.Forms.CheckBox checkBoxThursday;
+        private System.Windows.Forms.CheckBox checkBoxWednesday;
+        private System.Windows.Forms.CheckBox checkBoxTuesday;
     }
 }
 

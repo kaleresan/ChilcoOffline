@@ -1,4 +1,4 @@
-using Chilco;
+﻿using Chilco;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -75,7 +75,6 @@ namespace ChilcoSettingsEditor
             }
             else
             {
-                Console.WriteLine("Updating Group Information");
                 textBoxTitle.Text = CurrentGroup.ruleset.Title;
                 textBoxDailyPlaytime.Text = CurrentGroup.ruleset.DailyPlaytime.ToString(@"%d\dhh\hmm\mss\s");
                 textBoxLeftoverTime.Text = CurrentGroup.LeftoverTime.ToString(@"%d\dhh\hmm\mss\s");
@@ -225,9 +224,15 @@ namespace ChilcoSettingsEditor
             UpdateGroupInformation();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonAddProcess_Click(object sender, EventArgs e)
         {
+            if (listBoxRunningProcesses.SelectedIndex == -1) return;
             listBoxProcesses.Items.Add(listBoxRunningProcesses.SelectedItem);
+            CurrentGroup.ruleset.Processes.Clear();
+            for (int i = 0; i < listBoxProcesses.Items.Count; i++)
+            {
+                CurrentGroup.ruleset.Processes.Add(listBoxProcesses.Items[i].ToString());
+            }
         }
 
         private void buttonSave_Click(object sender, EventArgs e)

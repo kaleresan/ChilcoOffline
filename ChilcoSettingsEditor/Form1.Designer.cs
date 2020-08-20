@@ -48,18 +48,18 @@
             this.buttonRemoveProcess = new System.Windows.Forms.Button();
             this.buttonAddProcess = new System.Windows.Forms.Button();
             this.buttonUpdate = new System.Windows.Forms.Button();
-            this.buttonSave = new System.Windows.Forms.Button();
             this.buttonDeleteGroup = new System.Windows.Forms.Button();
             this.buttonAddGroup = new System.Windows.Forms.Button();
             this.labelGroup = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.checkBoxMonday = new System.Windows.Forms.CheckBox();
-            this.checkBoxTuesday = new System.Windows.Forms.CheckBox();
-            this.checkBoxWednesday = new System.Windows.Forms.CheckBox();
-            this.checkBoxThursday = new System.Windows.Forms.CheckBox();
-            this.checkBoxFriday = new System.Windows.Forms.CheckBox();
-            this.checkBoxSaturday = new System.Windows.Forms.CheckBox();
             this.checkBoxSunday = new System.Windows.Forms.CheckBox();
+            this.checkBoxSaturday = new System.Windows.Forms.CheckBox();
+            this.checkBoxFriday = new System.Windows.Forms.CheckBox();
+            this.checkBoxThursday = new System.Windows.Forms.CheckBox();
+            this.checkBoxWednesday = new System.Windows.Forms.CheckBox();
+            this.checkBoxTuesday = new System.Windows.Forms.CheckBox();
+            this.checkBoxMonday = new System.Windows.Forms.CheckBox();
+            this.buttonSave = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -237,7 +237,7 @@
             this.buttonAddProcess.TabIndex = 18;
             this.buttonAddProcess.Text = "Prozess hinzufügen";
             this.buttonAddProcess.UseVisualStyleBackColor = true;
-            this.buttonAddProcess.Click += new System.EventHandler(this.button2_Click);
+            this.buttonAddProcess.Click += new System.EventHandler(this.buttonAddProcess_Click);
             // 
             // buttonUpdate
             // 
@@ -250,17 +250,6 @@
             this.buttonUpdate.Text = "Update";
             this.buttonUpdate.UseVisualStyleBackColor = true;
             this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
-            // 
-            // buttonSave
-            // 
-            this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonSave.Location = new System.Drawing.Point(10, 428);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(736, 26);
-            this.buttonSave.TabIndex = 20;
-            this.buttonSave.Text = "Speichern";
-            this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // buttonDeleteGroup
             // 
@@ -318,90 +307,22 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(353, 25);
             this.tableLayoutPanel1.TabIndex = 24;
             // 
-            // checkBoxModay
+            // checkBoxSunday
             // 
-            this.checkBoxMonday.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.checkBoxSunday.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBoxMonday.Appearance = System.Windows.Forms.Appearance.Button;
-            this.checkBoxMonday.AutoSize = true;
-            this.checkBoxMonday.Location = new System.Drawing.Point(0, 0);
-            this.checkBoxMonday.Margin = new System.Windows.Forms.Padding(0);
-            this.checkBoxMonday.Name = "checkBoxModay";
-            this.checkBoxMonday.Size = new System.Drawing.Size(50, 25);
-            this.checkBoxMonday.TabIndex = 0;
-            this.checkBoxMonday.Text = "Mo";
-            this.checkBoxMonday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBoxMonday.UseVisualStyleBackColor = true;
-            this.checkBoxMonday.Click += new System.EventHandler(this.checkBoxModay_Click);
-            // 
-            // checkBoxTuesday
-            // 
-            this.checkBoxTuesday.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBoxTuesday.Appearance = System.Windows.Forms.Appearance.Button;
-            this.checkBoxTuesday.AutoSize = true;
-            this.checkBoxTuesday.Location = new System.Drawing.Point(50, 0);
-            this.checkBoxTuesday.Margin = new System.Windows.Forms.Padding(0);
-            this.checkBoxTuesday.Name = "checkBoxTuesday";
-            this.checkBoxTuesday.Size = new System.Drawing.Size(50, 25);
-            this.checkBoxTuesday.TabIndex = 1;
-            this.checkBoxTuesday.Text = "Di";
-            this.checkBoxTuesday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBoxTuesday.UseVisualStyleBackColor = true;
-            this.checkBoxTuesday.Click += new System.EventHandler(this.checkBoxTuesday_Click);
-            // 
-            // checkBoxWednesday
-            // 
-            this.checkBoxWednesday.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBoxWednesday.Appearance = System.Windows.Forms.Appearance.Button;
-            this.checkBoxWednesday.AutoSize = true;
-            this.checkBoxWednesday.Location = new System.Drawing.Point(100, 0);
-            this.checkBoxWednesday.Margin = new System.Windows.Forms.Padding(0);
-            this.checkBoxWednesday.Name = "checkBoxWednesday";
-            this.checkBoxWednesday.Size = new System.Drawing.Size(50, 25);
-            this.checkBoxWednesday.TabIndex = 2;
-            this.checkBoxWednesday.Text = "Mi";
-            this.checkBoxWednesday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBoxWednesday.UseVisualStyleBackColor = true;
-            this.checkBoxWednesday.Click += new System.EventHandler(this.checkBoxWednesday_Click);
-            // 
-            // checkBoxThursday
-            // 
-            this.checkBoxThursday.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBoxThursday.Appearance = System.Windows.Forms.Appearance.Button;
-            this.checkBoxThursday.AutoSize = true;
-            this.checkBoxThursday.Location = new System.Drawing.Point(150, 0);
-            this.checkBoxThursday.Margin = new System.Windows.Forms.Padding(0);
-            this.checkBoxThursday.Name = "checkBoxThursday";
-            this.checkBoxThursday.Size = new System.Drawing.Size(50, 25);
-            this.checkBoxThursday.TabIndex = 3;
-            this.checkBoxThursday.Text = "Do";
-            this.checkBoxThursday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBoxThursday.UseVisualStyleBackColor = true;
-            this.checkBoxThursday.Click += new System.EventHandler(this.checkBoxThursday_Click);
-            // 
-            // checkBoxFriday
-            // 
-            this.checkBoxFriday.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBoxFriday.Appearance = System.Windows.Forms.Appearance.Button;
-            this.checkBoxFriday.AutoSize = true;
-            this.checkBoxFriday.Location = new System.Drawing.Point(200, 0);
-            this.checkBoxFriday.Margin = new System.Windows.Forms.Padding(0);
-            this.checkBoxFriday.Name = "checkBoxFriday";
-            this.checkBoxFriday.Size = new System.Drawing.Size(50, 25);
-            this.checkBoxFriday.TabIndex = 4;
-            this.checkBoxFriday.Text = "Fr";
-            this.checkBoxFriday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBoxFriday.UseVisualStyleBackColor = true;
-            this.checkBoxFriday.Click += new System.EventHandler(this.checkBoxFriday_Click);
+            this.checkBoxSunday.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkBoxSunday.AutoSize = true;
+            this.checkBoxSunday.Location = new System.Drawing.Point(300, 0);
+            this.checkBoxSunday.Margin = new System.Windows.Forms.Padding(0);
+            this.checkBoxSunday.Name = "checkBoxSunday";
+            this.checkBoxSunday.Size = new System.Drawing.Size(53, 25);
+            this.checkBoxSunday.TabIndex = 6;
+            this.checkBoxSunday.Text = "So";
+            this.checkBoxSunday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBoxSunday.UseVisualStyleBackColor = true;
+            this.checkBoxSunday.Click += new System.EventHandler(this.checkBoxSunday_Click);
             // 
             // checkBoxSaturday
             // 
@@ -420,22 +341,102 @@
             this.checkBoxSaturday.UseVisualStyleBackColor = true;
             this.checkBoxSaturday.Click += new System.EventHandler(this.checkBoxSaturday_Click);
             // 
-            // checkBoxSunday
+            // checkBoxFriday
             // 
-            this.checkBoxSunday.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.checkBoxFriday.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBoxSunday.Appearance = System.Windows.Forms.Appearance.Button;
-            this.checkBoxSunday.AutoSize = true;
-            this.checkBoxSunday.Location = new System.Drawing.Point(300, 0);
-            this.checkBoxSunday.Margin = new System.Windows.Forms.Padding(0);
-            this.checkBoxSunday.Name = "checkBoxSunday";
-            this.checkBoxSunday.Size = new System.Drawing.Size(53, 25);
-            this.checkBoxSunday.TabIndex = 6;
-            this.checkBoxSunday.Text = "So";
-            this.checkBoxSunday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBoxSunday.UseVisualStyleBackColor = true;
-            this.checkBoxSunday.Click += new System.EventHandler(this.checkBoxSunday_Click);
+            this.checkBoxFriday.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkBoxFriday.AutoSize = true;
+            this.checkBoxFriday.Location = new System.Drawing.Point(200, 0);
+            this.checkBoxFriday.Margin = new System.Windows.Forms.Padding(0);
+            this.checkBoxFriday.Name = "checkBoxFriday";
+            this.checkBoxFriday.Size = new System.Drawing.Size(50, 25);
+            this.checkBoxFriday.TabIndex = 4;
+            this.checkBoxFriday.Text = "Fr";
+            this.checkBoxFriday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBoxFriday.UseVisualStyleBackColor = true;
+            this.checkBoxFriday.Click += new System.EventHandler(this.checkBoxFriday_Click);
+            // 
+            // checkBoxThursday
+            // 
+            this.checkBoxThursday.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBoxThursday.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkBoxThursday.AutoSize = true;
+            this.checkBoxThursday.Location = new System.Drawing.Point(150, 0);
+            this.checkBoxThursday.Margin = new System.Windows.Forms.Padding(0);
+            this.checkBoxThursday.Name = "checkBoxThursday";
+            this.checkBoxThursday.Size = new System.Drawing.Size(50, 25);
+            this.checkBoxThursday.TabIndex = 3;
+            this.checkBoxThursday.Text = "Do";
+            this.checkBoxThursday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBoxThursday.UseVisualStyleBackColor = true;
+            this.checkBoxThursday.Click += new System.EventHandler(this.checkBoxThursday_Click);
+            // 
+            // checkBoxWednesday
+            // 
+            this.checkBoxWednesday.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBoxWednesday.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkBoxWednesday.AutoSize = true;
+            this.checkBoxWednesday.Location = new System.Drawing.Point(100, 0);
+            this.checkBoxWednesday.Margin = new System.Windows.Forms.Padding(0);
+            this.checkBoxWednesday.Name = "checkBoxWednesday";
+            this.checkBoxWednesday.Size = new System.Drawing.Size(50, 25);
+            this.checkBoxWednesday.TabIndex = 2;
+            this.checkBoxWednesday.Text = "Mi";
+            this.checkBoxWednesday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBoxWednesday.UseVisualStyleBackColor = true;
+            this.checkBoxWednesday.Click += new System.EventHandler(this.checkBoxWednesday_Click);
+            // 
+            // checkBoxTuesday
+            // 
+            this.checkBoxTuesday.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBoxTuesday.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkBoxTuesday.AutoSize = true;
+            this.checkBoxTuesday.Location = new System.Drawing.Point(50, 0);
+            this.checkBoxTuesday.Margin = new System.Windows.Forms.Padding(0);
+            this.checkBoxTuesday.Name = "checkBoxTuesday";
+            this.checkBoxTuesday.Size = new System.Drawing.Size(50, 25);
+            this.checkBoxTuesday.TabIndex = 1;
+            this.checkBoxTuesday.Text = "Di";
+            this.checkBoxTuesday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBoxTuesday.UseVisualStyleBackColor = true;
+            this.checkBoxTuesday.Click += new System.EventHandler(this.checkBoxTuesday_Click);
+            // 
+            // checkBoxMonday
+            // 
+            this.checkBoxMonday.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBoxMonday.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkBoxMonday.AutoSize = true;
+            this.checkBoxMonday.Location = new System.Drawing.Point(0, 0);
+            this.checkBoxMonday.Margin = new System.Windows.Forms.Padding(0);
+            this.checkBoxMonday.Name = "checkBoxMonday";
+            this.checkBoxMonday.Size = new System.Drawing.Size(50, 25);
+            this.checkBoxMonday.TabIndex = 0;
+            this.checkBoxMonday.Text = "Mo";
+            this.checkBoxMonday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBoxMonday.UseVisualStyleBackColor = true;
+            this.checkBoxMonday.Click += new System.EventHandler(this.checkBoxModay_Click);
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSave.Location = new System.Drawing.Point(10, 428);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(848, 26);
+            this.buttonSave.TabIndex = 20;
+            this.buttonSave.Text = "Speichern";
+            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // Form1
             // 
@@ -497,7 +498,6 @@
         private System.Windows.Forms.Button buttonRemoveProcess;
         private System.Windows.Forms.Button buttonAddProcess;
         private System.Windows.Forms.Button buttonUpdate;
-        private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonDeleteGroup;
         private System.Windows.Forms.Button buttonAddGroup;
         private System.Windows.Forms.Label labelGroup;
@@ -509,6 +509,7 @@
         private System.Windows.Forms.CheckBox checkBoxThursday;
         private System.Windows.Forms.CheckBox checkBoxWednesday;
         private System.Windows.Forms.CheckBox checkBoxTuesday;
+        private System.Windows.Forms.Button buttonSave;
     }
 }
 

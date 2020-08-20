@@ -12,11 +12,11 @@ namespace Chilco
         public static List<Group> GetGroups { get; private set; } = new List<Group>();
 
         [JsonConstructor]
-        public Group(string Key, string Title, List<String> Processes, TimeSpan LeftoverTime, bool DoTimeRollover, DateTime DateLastRun, TimeSpan DailyPlaytime, TimeSpan MaxPlaytime)
+        public Group(string Key, string Title, List<String> Processes, TimeSpan LeftoverTime, bool DoTimeRollover, DateTime DateLastRun, TimeSpan DailyPlaytime, TimeSpan MaxPlaytime, bool[] Weekdays)
         {
             this.LeftoverTime = LeftoverTime;
             this.DateLastRun = DateLastRun;
-            this.ruleset = new Ruleset(Key, Title, Processes, DoTimeRollover, DailyPlaytime, MaxPlaytime);
+            this.ruleset = new Ruleset(Key, Title, Processes, DoTimeRollover, DailyPlaytime, MaxPlaytime, Weekdays);
         }
 
         public Group(TimeSpan leftoverTime, DateTime dateLastRun, Ruleset ruleset)
@@ -34,8 +34,9 @@ namespace Chilco
             public bool DoTimeRollover;
             public TimeSpan DailyPlaytime;
             public TimeSpan MaxPlaytime;
+            public bool[] Weekdays;
             [JsonConstructor]
-            public Ruleset(string Key, string Title, List<string> Processes, bool DoTimeRollover, TimeSpan DailyPlaytime, TimeSpan MaxPlaytime)
+            public Ruleset(string Key, string Title, List<string> Processes, bool DoTimeRollover, TimeSpan DailyPlaytime, TimeSpan MaxPlaytime, bool[] Weekdays)
             {
                 this.Key = Key;
                 this.Title = Title;
@@ -43,6 +44,10 @@ namespace Chilco
                 this.DoTimeRollover = DoTimeRollover;
                 this.DailyPlaytime = DailyPlaytime;
                 this.MaxPlaytime = MaxPlaytime;
+                if (Weekdays != null)
+                    this.Weekdays = Weekdays;
+                else
+                    this.Weekdays = new bool[] {true, true, true, true, true, true, true};
             }
         }
     }

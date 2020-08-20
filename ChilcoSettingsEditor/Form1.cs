@@ -21,7 +21,7 @@ namespace ChilcoSettingsEditor
         {
             InitializeComponent();
             Groups = FileIO.LoadGroups().ToList();
-            UpdateGrouplist(0);
+            UpdateGrouplist(Groups.Count > 0 ? 0 : -1);
         }
 
         public void UpdateGrouplist(int selectedIndex)
@@ -32,11 +32,24 @@ namespace ChilcoSettingsEditor
                 listBoxRules.Items.Add(group.ruleset.Key + " " + group.ruleset.Title);
             }
             listBoxRules.SelectedIndex = selectedIndex;
+            if(selectedIndex == -1)
+            {
+                CurrentGroup = new Group(
+                "",
+                "",
+                new List<string>(),
+                new TimeSpan(0),
+                true, DateTime.Now,
+                new TimeSpan(0),
+                new TimeSpan(0),
+                new bool[] { true, true, true, true, true, true, true });
+            }
+            UpdateGroupInformation();
         }
 
         public void UpdateGroupInformation()
         {
-            bool isSelected = CurrentGroup.ruleset.Key != "";
+            bool isSelected = CurrentGroup.ruleset.Key != "" && CurrentGroup != null;
             textBoxTitle.Enabled = isSelected;
             textBoxDailyPlaytime.Enabled = isSelected;
             textBoxLeftoverTime.Enabled = isSelected;
@@ -44,6 +57,13 @@ namespace ChilcoSettingsEditor
             checkBoxTimeRollover.Enabled = isSelected;
             buttonRemoveProcess.Enabled = isSelected;
             buttonAddProcess.Enabled = isSelected;
+            checkBoxMonday.Enabled = isSelected;
+            checkBoxTuesday.Enabled = isSelected;
+            checkBoxWednesday.Enabled = isSelected;
+            checkBoxThursday.Enabled = isSelected;
+            checkBoxFriday.Enabled = isSelected;
+            checkBoxSaturday.Enabled = isSelected;
+            checkBoxSunday.Enabled = isSelected;
             if (!isSelected)
             {
                 textBoxTitle.Text = "";
@@ -62,6 +82,14 @@ namespace ChilcoSettingsEditor
                 textBoxMaxPlaytime.Text = CurrentGroup.ruleset.MaxPlaytime.ToString(@"%d\dhh\hmm\mss\s");
                 checkBoxTimeRollover.Checked = CurrentGroup.ruleset.DoTimeRollover;
 
+                checkBoxMonday.Checked = CurrentGroup.ruleset.Weekdays[(int)DayOfWeek.Monday];
+                checkBoxTuesday.Checked = CurrentGroup.ruleset.Weekdays[(int)DayOfWeek.Tuesday];
+                checkBoxWednesday.Checked = CurrentGroup.ruleset.Weekdays[(int)DayOfWeek.Wednesday];
+                checkBoxThursday.Checked = CurrentGroup.ruleset.Weekdays[(int)DayOfWeek.Thursday];
+                checkBoxFriday.Checked = CurrentGroup.ruleset.Weekdays[(int)DayOfWeek.Friday];
+                checkBoxSaturday.Checked = CurrentGroup.ruleset.Weekdays[(int)DayOfWeek.Saturday];
+                checkBoxSunday.Checked = CurrentGroup.ruleset.Weekdays[(int)DayOfWeek.Sunday];
+
                 listBoxProcesses.Items.Clear();
                 foreach (string process in CurrentGroup.ruleset.Processes)
                 {
@@ -72,6 +100,12 @@ namespace ChilcoSettingsEditor
 
         private void listBoxRules_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if(listBoxRules.SelectedIndex == -1)
+            {
+                UpdateGrouplist(-1);
+                UpdateGroupInformation();
+                return;
+            }
             string key = listBoxRules.SelectedItem.ToString().Split(' ')[0];
             CurrentGroup = Groups.First(g => g.ruleset.Key.Equals(key));
             UpdateGroupInformation();
@@ -147,13 +181,14 @@ namespace ChilcoSettingsEditor
         private void buttonAddGroup_Click(object sender, EventArgs e)
         {
             Group g = new Group(
-                GenerateKey(), 
-                "Neue Regel", 
-                new List<string>(), 
-                new TimeSpan(0), 
-                true, DateTime.Now, 
-                new TimeSpan(0), 
-                new TimeSpan(0));
+                GenerateKey(),
+                "Neue Regel",
+                new List<string>(),
+                new TimeSpan(0),
+                true, DateTime.Now,
+                new TimeSpan(0),
+                new TimeSpan(0),
+                new bool[] { true, true, true, true, true, true, true });
             Groups.Add(g);
             UpdateGrouplist(Groups.Count - 1);
         }
@@ -184,7 +219,8 @@ namespace ChilcoSettingsEditor
                 new TimeSpan(0),
                 true, DateTime.Now,
                 new TimeSpan(0),
-                new TimeSpan(0));
+                new TimeSpan(0),
+            new bool[] { true, true, true, true, true, true, true });
             UpdateGrouplist(-1);
             UpdateGroupInformation();
         }
@@ -203,4 +239,62 @@ namespace ChilcoSettingsEditor
                 Process.Start(Directory.GetCurrentDirectory() + "\\chilco.exe");
             }
         }
+
+        private void checkBoxModay_Click(object sender, EventArgs e)
+        {
+            Weekdays_Click(DayOfWeek.Monday);
+        }
+
+        private void checkBoxTuesday_Click(object sender, EventArgs e)
+        {
+            Weekdays_Click(DayOfWeek.Tuesday);
+        }
+
+        private void checkBoxWednesday_Click(object sender, EventArgs e)
+        {
+            Weekdays_Click(DayOfWeek.Wednesday);
+        }
+
+        private void checkBoxThursday_Click(object sender, EventArgs e)
+        {
+            Weekdays_Click(DayOfWeek.Thursday);
+        }
+
+        private void checkBoxFriday_Click(object sender, EventArgs e)
+        {
+            Weekdays_Click(DayOfWeek.Friday);
+        }
+
+        private void checkBoxSaturday_Click(object sender, EventArgs e)
+        {
+            Weekdays_Click(DayOfWeek.Saturday);
+        }
+
+        private void checkBoxSunday_Click(object sender, EventArgs e)
+        {
+            Weekdays_Click(DayOfWeek.Sunday);
+        }
+
+        private void Weekdays_Click(DayOfWeek dayOfWeek)
+        {
+            CurrentGroup.ruleset.Weekdays[(int)dayOfWeek] = !CurrentGroup.ruleset.Weekdays[(int)dayOfWeek];
+            int i = CurrentGroup.ruleset.Weekdays.Count(w => w == false);
+            Console.WriteLine(i);
+            if(i == 7)
+            {
+                CurrentGroup.ruleset.Weekdays = new bool[] { true, true, true, true, true, true, true };
+                UpdateGroupInformation();
+                i = 0;
+            }
+            if (i == 0)
+            {
+                checkBoxTimeRollover.Enabled = true;
+            }
+            else
+            {
+                checkBoxTimeRollover.Checked = false;
+                checkBoxTimeRollover.Enabled = false;
+            }
+        }
+    }
 }

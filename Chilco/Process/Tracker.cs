@@ -45,6 +45,7 @@ namespace Chilco
         public void TimeRollover()
         {
             int diff = DateTime.Now.DayOfYear - group.DateLastRun.DayOfYear;
+            if (DateTime.Now.Ticks < group.DateLastRun.Ticks) diff = 0;
             while(diff < 0)
             {
                 diff += 365;

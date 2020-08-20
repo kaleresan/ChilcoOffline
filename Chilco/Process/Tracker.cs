@@ -15,7 +15,7 @@ namespace Chilco
         }
 
         /// <summary>
-        /// Checks if any process in the GetGroup is running.
+        /// Checks if any process in the Group is running.
         /// </summary>
         /// <returns>true if one or more processes in the Group are running</returns>
         private bool IsRunning()
@@ -39,6 +39,7 @@ namespace Chilco
             {
                 Butcher.KillProcesses(group);
             }
+            Console.WriteLine("Gruppe " + group.ruleset.Title + ":  " + group.LeftoverTime);
         }
 
         public void TimeRollover()
@@ -48,24 +49,32 @@ namespace Chilco
             {
                 diff += 365;
             }
+            
             if (diff > 0)
             {
-                for (int i = 0; i < diff; i++)
+                if (group.ruleset.DoTimeRollover)
                 {
-                    group.LeftoverTime += group.ruleset.DailyPlaytime;
+                    for (int i = 0; i < diff; i++)
+                    {
+                        group.LeftoverTime += group.ruleset.DailyPlaytime;
+                    }
                 }
-                group.DateLastRun = DateTime.Now;
+                else
+                {
+                    group.LeftoverTime = group.ruleset.DailyPlaytime;
+                }
+                
+                if (group.LeftoverTime.Ticks > group.ruleset.MaxPlaytime.Ticks && group.ruleset.MaxPlaytime.Ticks != 0)
+                {
+                    group.LeftoverTime = group.ruleset.MaxPlaytime;
+                }
             }
-            if (group.LeftoverTime.Ticks > group.ruleset.MaxPlaytime.Ticks && group.ruleset.MaxPlaytime.Ticks != 0)
-            {
-                group.LeftoverTime = group.ruleset.MaxPlaytime;
-            }
+            group.DateLastRun = DateTime.Now;
         }
 
         private void UpdateLeftoverTime()
         {
-            if(group.ruleset.DoTimeRollover) TimeRollover();
-
+            TimeRollover();
             if (RunningTime.IsRunning)
             {
                 if (group.LeftoverTime > RunningTime.Elapsed)

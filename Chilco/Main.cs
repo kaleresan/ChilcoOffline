@@ -46,10 +46,10 @@ namespace Chilco
             while (isRunning)
             {
                 Thread.Sleep(1000);
-                foreach(Tracker tracker in Trackers)
+                foreach(Tracker tracker in Trackers.Where(t => t.group.ruleset.Weekdays[(int) DateTime.Now.DayOfWeek] == true))
                 {              
                     tracker.CheckProcesses();
-                    Console.WriteLine("Gruppe "+tracker.group.ruleset.Title + ":  " + tracker.group.LeftoverTime);
+                    
                 }
                 SaveGroups();
             }

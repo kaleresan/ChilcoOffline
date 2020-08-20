@@ -44,7 +44,8 @@ namespace Chilco
                                     },
                         DoTimeRollover = true,
                         DailyPlaytime = new TimeSpan(0, 0, 30, 0, 0),
-                        MaxPlaytime = new TimeSpan(0, 0, 0, 0, 0)
+                        MaxPlaytime = new TimeSpan(0, 0, 0, 0, 0),
+                        Weekdays = new bool[]{true, true, true, true, true, true, true }
                     } ,
 
                     new Ruleset() {
@@ -56,7 +57,8 @@ namespace Chilco
                                     },
                         DoTimeRollover = true,
                         DailyPlaytime = new TimeSpan(0, 2, 0, 0, 0),
-                        MaxPlaytime = new TimeSpan(0, 0, 0, 0, 0)
+                        MaxPlaytime = new TimeSpan(0, 0, 0, 0, 0),
+                        Weekdays = new bool[]{true, true, true, true, true, true, true }
                     } ,
 
                     new Ruleset() {
@@ -70,7 +72,8 @@ namespace Chilco
                                     },
                         DoTimeRollover = false,
                         DailyPlaytime = new TimeSpan(0, 0, 0, 0, 0),
-                        MaxPlaytime = new TimeSpan(0, 0, 0, 0, 0)
+                        MaxPlaytime = new TimeSpan(0, 0, 0, 0, 0),
+                        Weekdays = new bool[]{true, true, true, true, true, true, true }
                     } 
                 };
 
